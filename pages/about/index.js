@@ -12,9 +12,11 @@ export default function About() {
     <div className={styles.about__aboutMe}>
       <div className={styles.about__aboutMe__image}>
         <Image 
-          src='assets/mypic/me_avatar.png'
+          src='/assets/mypic/me_avatar.png'
           alt='My Picture'
           className={styles.about__aboutMe__image__img}
+          width={300}
+          height={300}
         />
       </div>
       <div className={styles.about__aboutMe__description}>

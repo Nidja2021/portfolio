@@ -29,7 +29,7 @@ export default function Navbar() {
 
        <div className={styles.navbar__menu__logo}>
        <div className={styles.navbar__menu__logo__image}>
-        <Image src="./assets/logo.png" alt="" />
+        <Image src="/assets/logo.png" alt="" width={300} height={300}/>
        </div>
        <div className={styles.navbar__menu__logo__text}>
         <p>Ajdin Pipo</p>
