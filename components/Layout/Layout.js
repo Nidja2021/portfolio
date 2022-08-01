@@ -1,11 +1,7 @@
-import {useState} from 'react'
-import Footer from '../footer/Footer'
 import Navbar from '../navbar/Navbar'
-
 import styles from './layout.module.scss'
 
 function Layout({children}) {
-
 
   return (
     <div className={styles.layout}>
