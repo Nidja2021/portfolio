@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import styles from './navbar.module.scss'
 
-import Footer from '../footer/Footer'
+import Footer from '../footer/footer'
 import Image from "next/image"
 
 export default function Navbar() {
