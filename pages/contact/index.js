@@ -1,7 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faGithub} from '@fortawesome/free-regular-svg-icons'
-import Footer from '../../components/footer/Footer'
-
 import styles from './contact.module.scss'
 
 export default function Contact() {

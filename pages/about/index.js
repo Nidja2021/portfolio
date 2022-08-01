@@ -1,8 +1,6 @@
 import styles from './about.module.scss'
 import Image from 'next/image';
 
-import Fade from 'react-reveal/Fade';
-
 export default function About() {
   return (
     <section className={styles.about}>

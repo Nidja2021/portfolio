@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import styles from './hero.module.scss'
 
-import Fade from 'react-reveal/Fade';
-
 export default function Hero() {
   return (
     <div className={styles.hero}>
