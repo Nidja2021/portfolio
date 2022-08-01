@@ -1,4 +1,5 @@
 import styles from './about.module.scss'
+import Image from 'next/image';
 
 import Fade from 'react-reveal/Fade';
 
@@ -10,7 +11,7 @@ export default function About() {
     
     <div className={styles.about__aboutMe}>
       <div className={styles.about__aboutMe__image}>
-        <img 
+        <Image 
           src='assets/mypic/me_avatar.png'
           alt='My Picture'
           className={styles.about__aboutMe__image__img}

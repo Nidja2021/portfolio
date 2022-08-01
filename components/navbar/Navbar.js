@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import styles from './navbar.module.scss'
 
 import Footer from '../footer/Footer'
+import Image from "next/image"
 
 export default function Navbar() {
 
@@ -28,7 +29,7 @@ export default function Navbar() {
 
        <div className={styles.navbar__menu__logo}>
        <div className={styles.navbar__menu__logo__image}>
-        <img src="./assets/logo.png" alt="" />
+        <Image src="./assets/logo.png" alt="" />
        </div>
        <div className={styles.navbar__menu__logo__text}>
         <p>Ajdin Pipo</p>
