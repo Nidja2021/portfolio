@@ -1,0 +1,22 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/breakpoints' as *;
+
+.projects {
+
+    &__title {
+        @include section_title;
+    }
+
+    &__project {
+        @include flex(column, center, center);
+        gap: 15px 0;
+
+        @include sm {
+            @include flex();
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    }
+
+
+}

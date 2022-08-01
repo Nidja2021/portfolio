@@ -1,0 +1,66 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/breakpoints' as *;
+
+.contact {
+
+    &__title {
+        @include section_title;
+    }
+
+    &__form {
+        margin-top: 25px;
+        @include flex(column, space-evenly, center);
+        gap: 50px 0;
+
+        @include md {
+            max-width: 50%;
+            margin: 0 auto;
+        }
+
+        &__text {
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            @include flex(column, center, center);
+            gap: 10px 0;
+        }
+
+        &__inputControls {
+            width: 100%;
+            @include flex(column);
+            gap: 10px 0;
+        }
+
+        &__controls {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+        }
+
+        &__textarea {
+            height: 150px;
+        }
+
+        &__btn {
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        &__networks{
+            @include flex(row, center, center);
+            gap: 0 15px;
+            color: white;
+
+            &__links {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: white;
+                font-size: 18px;
+            }
+        }
+    }
+}

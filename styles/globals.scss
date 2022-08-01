@@ -1,0 +1,17 @@
+@use './variables' as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* background-color: #132932; */
+  /* background-color: #2C2E33; */
+  background-color: #212121;
+  /* background-color: #142129; */
+  /* background-color: #25272B; */
+  scroll-behavior: smooth;
+  font-family: var.$font-source-sans;
+}

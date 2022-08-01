@@ -1,0 +1,75 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/breakpoints' as *;
+
+.skills {
+
+    &__title {
+        @include section_title;
+    }
+
+    &__buttons {
+        width: 100%;
+        @include flex(row, center, center);
+        gap: 0 10px;
+
+        &__btn {
+            text-transform: uppercase;
+            padding: 10px 0;
+            width: 200px;
+            border: none;
+            background-color: blueviolet;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
+    &__content {
+        margin-top: 30px;
+
+        &__techicalSkills {
+            
+            @include flex(column, center, center);
+            gap: 30px 0;
+
+            &__notActive {
+                display: none;
+            }
+    
+            &__skill {
+                @include flex(column, center, center);
+                gap: 20px 0;
+                
+                h3 {
+                    color: white;
+                }
+
+                &__content {
+                    @include flex(row, center, center);
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+            }
+        }
+
+        &__softSkills {
+            @include flex(row, center, center);
+            gap: 10px;
+            flex-wrap: wrap;
+
+            @include lg {
+                width: 60%;
+                margin: 0 auto;
+            }
+
+            &__notActive {
+                display: none;
+            }
+        }
+    }
+
+    
+
+    
+}
+

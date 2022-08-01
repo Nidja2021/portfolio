@@ -1,0 +1,23 @@
+
+
+@mixin flex($direction: row, $justify_content: center, $align_items: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify_content;
+    align-items: $align_items;
+}
+
+@mixin section {
+    width: 100vw;
+    padding: 70px 20px 30px;
+}
+
+@mixin section_title {
+    text-transform: uppercase;
+        color: #8a2be2;
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        border-bottom: 1px solid blueviolet;
+        margin-bottom: 20px;
+}

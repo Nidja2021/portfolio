@@ -1,0 +1,86 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/breakpoints' as *;
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #212121;
+    z-index: 999;
+
+    
+
+    .buttons {
+        width: 60px;
+        height: 40px;
+        float: right;
+        margin: 10px 20px 0 0;
+
+        background-color: transparent;
+        border: 2px solid rgb(255 255 255);
+        text-transform: uppercase;
+        color: white;
+        cursor: pointer;
+        z-index: 9999;
+        display: block;
+        
+        .active {
+            display: none;
+        }
+    }
+
+    &__menu {
+        width: 100%;
+        height: 100vh;
+        @include flex(column, space-evenly, center);
+        gap: 25px 0;
+
+        &__logo {
+            @include flex(column);
+            
+            &__image {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 30px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            &__text {
+                @include flex(column, center, center);
+                gap: 10px 0;
+                
+                p{
+                    font-size: 20px;
+                    color: white;
+                }
+            }
+        }
+
+        &__links {
+            @include flex(column);
+            gap: 15px 0;
+
+            &__link {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 25px;
+                color: white;
+                font-weight: 700;
+            }
+        }
+
+        &__networks {
+            @include flex;
+            gap: 10px 15px;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}

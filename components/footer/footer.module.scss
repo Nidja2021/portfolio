@@ -1,0 +1,11 @@
+@use '../../styles/mixin' as *;
+
+.footer {
+    
+    @include flex(column, center, center);
+    padding: 10px 0;
+
+    &__text {
+        color: white;
+    }
+}

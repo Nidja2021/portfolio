@@ -1,0 +1,17 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/breakpoints' as *;
+
+.layout {
+    width: 100%;
+    position: relative;
+
+    &__main {
+        height: auto;
+        @include section;
+
+        @include lg {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
