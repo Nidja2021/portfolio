@@ -13,7 +13,7 @@ export default function Contact() {
       <form className={styles.contact__form}>
           <div className={styles.contact__form__text}>
             <p>You have interesting project for me ?</p>
-            <p>Okay, send me message and let's talk :)</p>
+            <p>Okay, send me message and lets talk :)</p>
           </div>
           <div className={styles.contact__form__inputControls}>
             <input className={styles.contact__form__controls} type="text" placeholder='Name...' />
