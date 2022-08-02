@@ -1,5 +1,5 @@
-import Navbar from '../navbar/Navbar'
-import styles from './layout.module.scss'
+import Navbar from './navbar/Navbar'
+import styles from '../styles/layout.module.scss'
 
 function Layout({children}) {
 
