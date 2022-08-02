@@ -11,7 +11,7 @@ export default function Hero() {
       </div>
       <div className={styles.hero__line}></div>
       <div className={styles.hero__text}>
-        <p>You want to text me, I cant wait to meet you</p>
+        <p>You want to text me, I can't wait to meet you</p>
         <Link href='/contact'><a className={styles.hero__text__btn}>Lets chat</a></Link>
       </div>
     </div>
