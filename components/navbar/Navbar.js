@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useState } from "react"
 import styles from './navbar.module.scss'
 
-import Footer from '../footer/footer'
+import Footer from '../footer/Footer'
 import Image from "next/image"
 
 export default function Navbar() {

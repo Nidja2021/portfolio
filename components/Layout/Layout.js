@@ -1,4 +1,4 @@
-import Navbar from '../navbar/navbar'
+import Navbar from '../navbar/Navbar'
 import styles from './layout.module.scss'
 
 function Layout({children}) {
