@@ -32,8 +32,9 @@
     &__menu {
         width: 100%;
         height: 100vh;
-        @include flex(column, space-evenly, center);
-        // gap: 25px 0;
+        margin-top: 100px;
+        @include flex(column, flex-start, center);
+        gap: 100px 0;
 
         &__logo {
             @include flex(column);
