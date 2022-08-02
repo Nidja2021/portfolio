@@ -1,8 +1,6 @@
 import Link from "next/link"
 import { useState } from "react"
 import styles from './navbar.module.scss'
-
-import Footer from '../footer/Footer'
 import Image from "next/image"
 
 export default function Navbar() {
@@ -60,7 +58,7 @@ export default function Navbar() {
             <Link href="#">LINKEDIN</Link>
             <Link href="#">CODEPEN</Link>
         </div>
-        <Footer />
+        <p className={styles.navbar__menu__footer}>Designed and developed by Ajdin Pipo</p>
        </div>
      : ''
     }
