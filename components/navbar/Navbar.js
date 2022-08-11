@@ -1,68 +1,53 @@
 import Link from "next/link"
-import { useState } from "react"
+import { useRouter } from "next/router"
 import styles from './navbar.module.scss'
 import Image from "next/image"
 
 export default function Navbar() {
 
-    const [activeMenu, setActiveMenu] = useState(false)
-    const min_width = 960;
+    const router = useRouter()
     
-    const handleActiveMenu = e => {
-        setActiveMenu(!activeMenu)
+    const handleHomeImage = () => {
+        router.push('/')
     }
   return (
     <nav className={styles.navbar}>
     
-    {
-        activeMenu ? 
-        <button className={`${styles.buttons} ${activeMenu ? '' : 'active'}`} onClick={handleActiveMenu}>exit</button>
-        :
-        <button className={`${styles.buttons} ${activeMenu ? '' : 'active'}`} onClick={handleActiveMenu}>menu</button>
-    }
-    {
-        activeMenu ? 
-    
-       <div className={`${styles.navbar__menu} ${activeMenu ? 'active' : ''}`}>
+       <div className={`${styles.navbar__menu}`}>
 
        <div className={styles.navbar__menu__logo}>
-       <div className={styles.navbar__menu__logo__image}>
-        <Image src="/assets/logo.png" alt="" width={300} height={300}/>
-       </div>
-       <div className={styles.navbar__menu__logo__text}>
-        <p>Ajdin Pipo</p>
-        <p>Software Developer</p>
-       </div>
+        <div className={styles.navbar__menu__logo__image} onClick={handleHomeImage}>
+            <Image src="/assets/logo.png" alt="" width={300} height={300}/>
+        </div>
+        <div className={styles.navbar__menu__logo__text}>
+            <p>Ajdin Pipo</p>
+            <p>Software Developer</p>
+        </div>
         
-    </div>
+        </div>
     <div className={styles.navbar__menu__links}>
         <Link href='/'>
-            <a className={styles.navbar__menu__links__link} onClick={handleActiveMenu}>home</a>
+            <a className={styles.navbar__menu__links__link}>home</a>
         </Link>
         <Link href='/about'>
-            <a className={styles.navbar__menu__links__link} onClick={handleActiveMenu}>about me</a>
+            <a className={styles.navbar__menu__links__link}>about me</a>
         </Link>
         <Link href='/skills'>
-            <a className={styles.navbar__menu__links__link} onClick={handleActiveMenu}>skills</a>
+            <a className={styles.navbar__menu__links__link}>skills</a>
         </Link>
         <Link href='/projects'>
-            <a className={styles.navbar__menu__links__link} onClick={handleActiveMenu}>projects</a>
+            <a className={styles.navbar__menu__links__link}>projects</a>
         </Link>
         <Link href='/contact'>
-            <a className={styles.navbar__menu__links__link} onClick={handleActiveMenu}>contact</a>
+            <a className={styles.navbar__menu__links__link}>contact</a>
         </Link>
-    </div>
-        
-        <div className={styles.navbar__menu__networks}>
-            <Link href="#">GITHUB</Link>
-            <Link href="#">LINKEDIN</Link>
-            <Link href="#">CODEPEN</Link>
-        </div>
-        <p className={styles.navbar__menu__footer}>Designed and developed by Ajdin Pipo</p>
+    </div> 
+    <div className={styles.navbar__menu__networks}>
+            <Link href="#"><a className={styles.navbar__menu__networks__network}>GITHUB</a></Link>
+            <Link href="#"><a className={styles.navbar__menu__networks__network}>LINKEDIN</a></Link>
+            <Link href="#"><a className={styles.navbar__menu__networks__network}>CODEPEN</a></Link>
+        </div>       
        </div>
-     : ''
-    }
     </nav>
-    
   )
 }

@@ -7,15 +7,12 @@
         @include section_title;
     }
 
-    &__project {
-        @include flex(column, center, center);
-        gap: 15px 0;
+    &__project_list {
+        @include flex($wrap: wrap);
+        gap: 30px;
 
-        @include sm {
-            @include flex();
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+
+
     }
 
 

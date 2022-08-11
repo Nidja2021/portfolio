@@ -14,7 +14,7 @@ export default function Projects() {
 
     <h1 className={styles.projects__title}>Projects</h1>
 
-    <div className={styles.projects__project}>
+    <div className={styles.projects__project_list}>
     {
         projects.map(({name, src, alt, link}) => (
           <Project key={name} name={name} src={src} alt={alt} link={link}/>

@@ -3,7 +3,7 @@ import styles from './hero.module.scss'
 
 export default function Hero() {
   return (
-    <div className={styles.hero}>
+    <div className={`${styles.hero}`}>
       <div className={styles.hero__aboutMe}>
         <p>Hi there</p>
         <p>I am Ajdin Pipo</p>

@@ -2,42 +2,38 @@
 @use '../../styles/breakpoints' as *;
 
 .navbar {
-    position: fixed;
     width: 100%;
-    padding: 10px 0;
-    background-color: #212121;
+    position: fixed;
+    bottom: 0;
+    // border: 1px solid #fff;
+    background-color: #3b3030;
     z-index: 999;
 
-    
+    @include md {
+        width: 20%;
+        top: 0;
+    }   
 
-    .buttons {
-        width: 60px;
-        height: 40px;
-        float: right;
-        margin: 10px 20px 0 0;
-
-        background-color: transparent;
-        border: 2px solid rgb(255 255 255);
-        text-transform: uppercase;
-        color: white;
-        cursor: pointer;
-        z-index: 9999;
-        display: block;
-        
-        .active {
-            display: none;
-        }
+    @include lg {
+        width: 15%;
     }
-
+    
     &__menu {
         width: 100%;
-        height: 100vh;
-        margin-top: 100px;
-        @include flex(column, flex-start, center);
-        gap: 100px 0;
+        @include flex;
+
+        @include md {
+            height: 100%;
+            @include flex($direction: column, $justifyContent: space-evenly);
+        }
 
         &__logo {
-            @include flex(column);
+            display: none;
+
+            @include md {
+                display: block;
+                @include flex(column);
+            }
             
             &__image {
                 width: 60px;
@@ -53,6 +49,7 @@
             &__text {
                 @include flex(column, center, center);
                 gap: 10px 0;
+                text-align: center;
                 
                 p{
                     font-size: 20px;
@@ -62,31 +59,35 @@
         }
 
         &__links {
-            @include flex(column);
-            gap: 15px 0;
+            width: 100%;
+            @include flex($justifyContent: space-evenly);
+
+            @include md {
+                @include flex($direction: column);
+            }
 
             &__link {
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 25px;
-                color: white;
-                font-weight: 700;
+                @include text($fontSize: 10px);
+                padding: 12px 0;
+
+                @include md {
+                    font-size: 13px;
+                }
             }
         }
 
         &__networks {
-            @include flex;
-            gap: 10px 15px;
+            display: none;
 
-            a {
-                text-decoration: none;
-                color: white;
+            @include md {
+                display: block;
+                @include flex($direction: column);
+                gap: 15px 0;
             }
-        }
 
-        &__footer {
-            color: white;
-            margin-bottom: 30px;
+            &__network {
+                @include text($fontSize: 12px);
+            }
         }
     }
 }
