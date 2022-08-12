@@ -1,27 +1,37 @@
 import Project from '../../components/project/Project'
-import styles from './projects.module.scss'
+import styles from '../../styles/projects.module.scss';
+import { db } from "../../firebase/firebaseConfig";
+import {
+  collection,
+  getDocs,
+  doc,
+} from "firebase/firestore";
 
-export default function Projects() {
-
-  const projects = [
-    {name: 'Bug tracker', src: '/my_pic.jpg', alt: 'Bug Tracker', link: 'https://www.google.com/'},
-    {name: 'Bug tracker', src: '/assets/skills/html.png', alt: 'Bug Tracker', link: 'https://www.google.com/'},
-    {name: 'Bug tracker', src: '/assets/skills/css.png', alt: 'Bug Tracker', link: 'https://www.google.com/'},
-  ]
+export default function Projects({projects}) {
 
   return (
-    <section className={styles.projects}>
+    <div className={styles.projects}>
+      <h1 className={styles.projects__title}>Projects</h1>
 
-    <h1 className={styles.projects__title}>Projects</h1>
-
-    <div className={styles.projects__project_list}>
-    {
-        projects.map(({name, src, alt, link}) => (
-          <Project key={name} name={name} src={src} alt={alt} link={link}/>
-        ))
-      }
+      <div className={styles.projects__project_list}>
+      {
+          projects.map((project) => (
+            <Project key={project.name} project={project}/>
+          ))
+        }
+      </div>
     </div>
-      
-    </section>
   )
+}
+
+export async function getServerSideProps(context) {
+  const projectsCollection = collection(db, "projects");
+  const data = await getDocs(projectsCollection);
+  const projects = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
+  console.log(projects);
+  return {
+    props: {
+      projects,
+    }
+  }
 }

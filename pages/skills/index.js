@@ -1,6 +1,6 @@
 import Skill from "../../components/skill/Skill"
 import SoftSkill from '../../components/skill/SoftSkill';
-import styles from './skills.module.scss'
+import styles from '../../styles/skills.module.scss';
 import { useState } from 'react';
 
 export default function Skills() {

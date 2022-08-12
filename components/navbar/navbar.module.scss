@@ -5,13 +5,15 @@
     width: 100%;
     position: fixed;
     bottom: 0;
-    // border: 1px solid #fff;
-    background-color: #3b3030;
+    border-top: 1px solid rgb(138, 43, 226);
+    background-color: #221f1f;
     z-index: 999;
 
     @include md {
         width: 20%;
         top: 0;
+        border-right: 1px solid rgb(138, 43, 226);
+        border-top: none;
     }   
 
     @include lg {
@@ -39,6 +41,7 @@
                 width: 60px;
                 height: 60px;
                 margin-bottom: 30px;
+                cursor: pointer;
 
                 img {
                     width: 100%;
@@ -60,6 +63,7 @@
 
         &__links {
             width: 100%;
+            
             @include flex($justifyContent: space-evenly);
 
             @include md {
@@ -68,10 +72,20 @@
 
             &__link {
                 @include text($fontSize: 10px);
-                padding: 12px 0;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
 
                 @include md {
-                    font-size: 13px;
+                    font-size: 14px;
+                    padding: 15px 0;
+                    border-top: 1px solid rgb(138, 43, 226);
+                    border-bottom: 1px solid rgb(138, 43, 226);
+                    transition: all .3s ease-in-out;
+
+                    &:hover {
+                        color:rgb(138, 43, 226);
+                    }
                 }
             }
         }

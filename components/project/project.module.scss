@@ -3,20 +3,20 @@
 
 .project {
     width: 100%;
-    // border: 1px solid white;
     height: 300px;
+    cursor: pointer;
     transition: all .3s ease-in-out;
 
     @include sm {
-        width: 50%;
+        width: 60%;
     }
 
     @include md {
-        width: 40%;
+        width: 45%;
     }
 
     @include lg {
-        width: 25%;
+        width: 30%;
     }
 
     &__image {
