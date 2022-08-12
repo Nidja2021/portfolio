@@ -1,7 +1,13 @@
 import styles from '../../styles/about.module.scss';
 import Image from 'next/image';
+import { saveAs } from 'file-saver';
 
 export default function About() {
+
+  const saveFile = () => {
+    saveAs('/assets/pdfs/ajdin_pipo_cv.pdf', 'ajdin_pipo_cv.pdf');
+  }
+
   return (
     <div className={styles.about}>
 
@@ -25,7 +31,7 @@ export default function About() {
         <div className={styles.about__aboutMe__description__resume}>
           <p>Want to know more about me?</p>
           <p>You can download my resume.</p>
-          <button className={styles.about__aboutMe__description__resume__btn}>download resume</button>
+          <button className={styles.about__aboutMe__description__resume__btn} onClick={saveFile}>download resume</button>
         </div>
       </div>
     </div>

@@ -71,10 +71,27 @@
             }
 
             &__link {
-                @include text($fontSize: 10px);
+                @include text($fontSize: 11px);
                 width: 100%;
                 text-align: center;
-                padding: 15px 0;
+                padding: 18px 0;
+                position: relative;
+
+                &:not(:last-child)::after {
+                    content: '';
+                    position: absolute;
+                    right: 0px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 1px;
+                    height: 20px;
+                    background-color: rgb(138, 43, 226);
+
+                    @include md {
+                        width: 0;
+                        height: 0;
+                    }
+                }
 
                 @include md {
                     font-size: 14px;

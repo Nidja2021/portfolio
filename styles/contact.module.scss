@@ -23,6 +23,7 @@
             font-size: 20px;
             @include flex(column, center, center);
             gap: 10px 0;
+            line-height: 1.5;
         }
 
         &__inputControls {

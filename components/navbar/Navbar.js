@@ -30,7 +30,7 @@ export default function Navbar() {
             <a className={styles.navbar__menu__links__link}>home</a>
         </Link>
         <Link href='/about'>
-            <a className={styles.navbar__menu__links__link}>about me</a>
+            <a className={styles.navbar__menu__links__link}>about</a>
         </Link>
         <Link href='/skills'>
             <a className={styles.navbar__menu__links__link}>skills</a>
