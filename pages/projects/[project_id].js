@@ -1,9 +1,10 @@
+import ProjectDetails from '../../components/project/ProjectDetails'
 import { db } from "../../firebase/firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 
-export default function Project() {
+export default function Project({project}) {
   return (
-    <div>Project</div>
+    <ProjectDetails project={project}/>
   )
 }
 
@@ -21,6 +22,8 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: {}
+    props: {
+      project: docSnap.data()
+    }
   }
 }
