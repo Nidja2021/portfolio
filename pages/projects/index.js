@@ -28,7 +28,7 @@ export async function getServerSideProps(context) {
   const projectsCollection = collection(db, "projects");
   const data = await getDocs(projectsCollection);
   const projects = data.docs.map((doc) => ({...doc.data(), id: doc.id}))
-  console.log(projects);
+  // console.log(projects);
   return {
     props: {
       projects,
