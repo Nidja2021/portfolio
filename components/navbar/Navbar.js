@@ -43,9 +43,9 @@ export default function Navbar() {
         </Link>
     </div> 
     <div className={styles.navbar__menu__networks}>
-            <Link href="#"><a className={styles.navbar__menu__networks__network}>GITHUB</a></Link>
-            <Link href="#"><a className={styles.navbar__menu__networks__network}>LINKEDIN</a></Link>
-            <Link href="#"><a className={styles.navbar__menu__networks__network}>CODEPEN</a></Link>
+            <Link href="https://github.com/Nidja2021"><a className={styles.navbar__menu__networks__network} target='_blank'>GITHUB</a></Link>
+            <Link href="https://www.linkedin.com/in/ajdin-pipo-68b922118/"><a className={styles.navbar__menu__networks__network} target='_blank'>LINKEDIN</a></Link>
+            <Link href="https://codepen.io/Ajdin123"><a className={styles.navbar__menu__networks__network} target='_blank'>CODEPEN</a></Link>
         </div>       
        </div>
     </nav>

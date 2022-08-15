@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link'
 
 import styles from '../../styles/contact.module.scss';
 
@@ -89,9 +90,9 @@ export default function Contact() {
           </form>
           
           <div className={styles.contact__form__networks}>
-            <a href="#" className={styles.contact__form__networks__links}>github</a>
-            <a href="#" className={styles.contact__form__networks__links}>linkedin</a>
-            <a href="#" className={styles.contact__form__networks__links}>codepen</a>
+            <Link href="https://github.com/Nidja2021"><a className={styles.contact__form__networks__links} target='_blank'>GITHUB</a></Link>
+            <Link href="https://www.linkedin.com/in/ajdin-pipo-68b922118/"><a className={styles.contact__form__networks__links} target='_blank'>LINKEDIN</a></Link>
+            <Link href="https://codepen.io/Ajdin123"><a className={styles.contact__form__networks__links} target='_blank'>CODEPEN</a></Link>
           </div>
         </div>
       
