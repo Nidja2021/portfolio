@@ -17,6 +17,10 @@
             margin: 0 auto;
         }
 
+        @include landscape {
+            max-width: 80%;
+        }
+
         &__text {
             color: white;
             text-align: center;

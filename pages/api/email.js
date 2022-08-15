@@ -6,9 +6,6 @@ export default async function sendEmail(req, res) {
     const { name, email, subject, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-      // host: 'smtp.gmail.com',
-      // port: 465,
-      // secure: true,
       service: 'gmail',
       auth: {
         user: process.env.USER,
@@ -17,6 +14,7 @@ export default async function sendEmail(req, res) {
     });
     try {
       const emailRes = await transporter.sendMail({
+        sender: email,
         from: email,
         to: 'pipo.m.ajdin@gmail.com',
         subject: subject,

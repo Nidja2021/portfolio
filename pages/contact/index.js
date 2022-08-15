@@ -29,17 +29,16 @@ export default function Contact() {
     };
     try {
       const response = await axios(config);
-      console.log(response);
+      console.log(response.data.data);
       if (response.status == 200) {
-        // reset();
-        // toast(
-        //   'success',
-        //   'Thank you for contacting us, we will be in touch soon.'
-        // );
-        console.log('success');
+        alert(response.data.message)
+        setInputs({ name:'', email:'', subject:'', message:'' })
+      }
+      else {
+        alert(response.data.data.message)
       }
     } catch (error) {
-      console.log('error', error.message);
+      console.log(error.message);
     }
   }
 

@@ -22,8 +22,8 @@ export default function Skills() {
     setTechicalSkillsActive(false)
   }
 
-  const frontend = ['Javascript', 'ReactJS', 'NextJS', 'Vanilla', 'HTML5', 'CSS3', 'Sass']
-  const backend = ['NodeJS', 'Express', 'Python', 'Django', 'Java', 'Typescript']
+  const frontend = ['Javascript', 'ReactJS', 'NextJS', 'Typescript', 'Vanilla', 'HTML5', 'CSS3', 'Sass']
+  const backend = ['NodeJS', 'Express', 'Python', 'Django', 'Java', 'Spring Boot']
   const databases = ['Postgresql', 'MongoDB', 'MySQL']
   const softSkills = [
     {name: 'Communication', desc: ['Listen without interrupting', 'Speak withapositive tone', 'Pay attention to your body']},

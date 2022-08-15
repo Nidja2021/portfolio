@@ -1,10 +1,11 @@
-@use './variables' as var;
+@use './variables' as *;
 @use './breakpoints' as *;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-source-sans;
 }
 
 html {
@@ -14,7 +15,6 @@ html {
   /* background-color: #142129; */
   /* background-color: #25272B; */
   scroll-behavior: smooth;
-  font-family: var.$font-source-sans;
 }
 
 .container {
@@ -31,5 +31,10 @@ html {
   @include lg {
     width: 85%;
     margin: 20px 15%;
+  }
+
+  @include landscape {
+    width: 90%;
+    margin: 20px 25%;
   }
 }

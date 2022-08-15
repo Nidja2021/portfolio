@@ -3,6 +3,7 @@ $breakpoints: (
     'md': 720px,
     'lg': 960px,
     'xl': 1280px,
+    'landscape': 500px,
 );
 
 @mixin sm {
@@ -24,6 +25,12 @@ $breakpoints: (
 
 @mixin xl {
     @media screen and (min-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin landscape {
+    @media screen and (max-height: map-get($breakpoints, 'landscape')) and (min-width: map-get($breakpoints, 'md')) {
         @content;
     }
 }
