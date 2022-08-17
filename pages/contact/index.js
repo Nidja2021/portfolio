@@ -52,6 +52,7 @@ export default function Contact() {
           <div className={styles.contact__form__text}>
             <p>You have interesting project for me ?</p>
             <p>I would like to hear more about it, send me message and let's build something incredible :)</p>
+            <p className={styles.contact__form__text__myMail}>Email: pipo.m.ajdin@gmail.com</p>
           </div>
           
           <form onSubmit={onSubmitEmail} className={styles.contact__form__inputControls}>
