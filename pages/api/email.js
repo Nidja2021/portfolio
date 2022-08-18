@@ -71,6 +71,7 @@ export default async function sendEmail(req, res) {
         sender: email,
         from: `PORTFOLIO ${name} ${email}`,
         to: [process.env.MY_MAIL, process.env.USER],
+        replyTo: email,
         subject: subject,
         html: `<p>Email sent from ${name}</p>
           <p>Email: ${email}</p>
@@ -80,8 +81,8 @@ export default async function sendEmail(req, res) {
       })
       
     } catch (error) {
-      return res.status(200).json({message: error.message})
+      res.status(200).json({message: error.message})
     }
-    return res.status(200).json({message: 'Email sent successfully'})
+    res.status(200).json({message: 'Email sent successfully'})
 }
 
