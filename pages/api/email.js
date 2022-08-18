@@ -2,22 +2,18 @@ require('dotenv').config()
 import nodemailer from 'nodemailer'
 import {google} from 'googleapis'
 
-async function getToken() {
-  const oAuth2Client = new google.auth.OAuth2(
-    process.env.CLIENT_ID,
-    process.env.CLIENT_SECRET,
-    process.env.REDIRECT_URI
-  )
-  oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN })
-  const accessToken = await oAuth2Client.getAccessToken()
-
-  return accessToken.token
-}
+const oAuth2Client = new google.auth.OAuth2(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.REDIRECT_URI
+)
+oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN })
 
 export default async function sendMail(req, res) {
   const { name, email, subject, message } = req.body
 
   try {
+    const accessToken = await oAuth2Client.getAccessToken()
     const transport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -26,17 +22,17 @@ export default async function sendMail(req, res) {
           clientId: process.env.CLIENT_ID,
           clientSecret: process.env.CLIENT_SECRET,
           refreshToken: process.env.REFRESH_TOKEN,
-          accessToken: getToken()
+          accessToken: accessToken.token
         }
       })
       
       const mailOptions = {
         from: `PORTFOLIO ${email}`,
-        to: process.env.MY_MAIL,
+        to: [process.env.MY_MAIL, process.env.USER],
         subject: subject,
         text: 'New message',
         html: `<h1>Message from: ${name}</h1>
-          <h2>Message:</h2>
+          <h4>Message:</h4>
           <p>${message}</p>
         `,
       };

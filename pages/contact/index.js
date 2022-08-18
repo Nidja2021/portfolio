@@ -12,8 +12,6 @@ export default function Contact() {
     message:''
   })
 
-  const formRef = useRef()
-
   const handleChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });  
   }
@@ -30,10 +28,11 @@ export default function Contact() {
     };
     try {
       const response = await axios(config);
-      console.log(response.data.data);
+      console.log(response.data.message);
       if (response.status == 200) {
         alert(response.data.message)
         setInputs({ name:'', email:'', subject:'', message:'' })
+        console.clear();
       }
       else {
         alert(response.data.data.message)
