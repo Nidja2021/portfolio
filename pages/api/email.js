@@ -9,79 +9,79 @@ const oAuth2Client = new google.auth.OAuth2(
 )
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN })
 
-export default async function sendMail(req, res) {
-  const { name, email, subject, message } = req.body
+// export default async function sendMail(req, res) {
+//   const { name, email, subject, message } = req.body
 
-  try {
-    const accessToken = await oAuth2Client.getAccessToken()
-    const transport = nodemailer.createTransport({
-        service: 'gmail',
-        port: 465,
-        secure: true,
-        auth: {
-          type: 'oauth2',
-          user: process.env.USER,
-          clientId: process.env.CLIENT_ID,
-          clientSecret: process.env.CLIENT_SECRET,
-          refreshToken: process.env.REFRESH_TOKEN,
-          accessToken: accessToken.token
-        }
-      })
+//   try {
+//     const accessToken = await oAuth2Client.getAccessToken()
+//     const transport = nodemailer.createTransport({
+//         service: 'gmail',
+//         port: 465,
+//         secure: true,
+//         auth: {
+//           type: 'oauth2',
+//           user: process.env.USER,
+//           clientId: process.env.CLIENT_ID,
+//           clientSecret: process.env.CLIENT_SECRET,
+//           refreshToken: process.env.REFRESH_TOKEN,
+//           accessToken: accessToken.token
+//         }
+//       })
       
-      const mailOptions = {
+//       const mailOptions = {
+//         from: `PORTFOLIO ${email}`,
+//         to: [process.env.MY_MAIL, process.env.USER],
+//         subject: subject,
+//         text: 'New message',
+//         html: `<h1>Message from: ${name}</h1>
+//           <h4>Message:</h4>
+//           <p>${message}</p>
+//         `,
+//       };
+  
+//       // const result = transport.sendMail(mailOptions, err => {
+//       //   if (err) {
+//       //     return res.status(500).json({ message: err.message })
+//       //   }
+//       // });
+
+//       transport.sendMail(mailOptions)
+//       return res.status(200).json({ message: 'Email sent successfully!' })
+
+//   } catch (err) {
+//     return res.status(500).json({ message: err.message })
+//   }
+  
+// }
+
+
+export default async function sendEmail(req, res) {
+
+    const { name, email, subject, message } = req.body;
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.USER,
+        pass: process.env.PASS,
+      },
+    });
+    try {
+      const emailRes = await transporter.sendMail({
+        sender: email,
         from: `PORTFOLIO ${email}`,
         to: [process.env.MY_MAIL, process.env.USER],
         subject: subject,
-        text: 'New message',
-        html: `<h1>Message from: ${name}</h1>
-          <h4>Message:</h4>
-          <p>${message}</p>
-        `,
-      };
-  
-      // const result = transport.sendMail(mailOptions, err => {
-      //   if (err) {
-      //     return res.status(500).json({ message: err.message })
-      //   }
-      // });
-
-      transport.sendMail(mailOptions)
-      return res.status(200).json({ message: 'Email sent successfully!' })
-
-  } catch (err) {
-    return res.status(500).json({ message: err.message })
-  }
-  
-}
-
-
-// export default async function sendEmail(req, res) {
-
-//     const { name, email, subject, message } = req.body;
-
-//     const transporter = nodemailer.createTransport({
-//       service: 'gmail',
-//       auth: {
-//         user: process.env.USER,
-//         pass: process.env.PASS,
-//       },
-//     });
-//     try {
-//       const emailRes = await transporter.sendMail({
-//         sender: email,
-//         from: email,
-//         to: 'pipo.m.ajdin@gmail.com',
-//         subject: subject,
-//         html: `<p>Email sent from ${name}</p>
-//           <p>Email: ${email}</p>
-//           <p>Subject: ${subject}</p>
-//           <p>Message: ${message}</p>
-//         `
-//       })
+        html: `<p>Email sent from ${name}</p>
+          <p>Email: ${email}</p>
+          <p>Subject: ${subject}</p>
+          <p>Message: ${message}</p>
+        `
+      })
       
-//     } catch (error) {
-//       return res.status(200).json({message: error.message})
-//     }
-//     return res.status(200).json({message: 'Email sent successfully'})
-// }
+    } catch (error) {
+      return res.status(200).json({message: error.message})
+    }
+    return res.status(200).json({message: 'Email sent successfully'})
+}
 
