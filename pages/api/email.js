@@ -69,7 +69,7 @@ export default async function sendEmail(req, res) {
     try {
       const emailRes = await transporter.sendMail({
         sender: email,
-        from: `PORTFOLIO ${email}`,
+        from: `PORTFOLIO ${name} ${email}`,
         to: [process.env.MY_MAIL, process.env.USER],
         subject: subject,
         html: `<p>Email sent from ${name}</p>
