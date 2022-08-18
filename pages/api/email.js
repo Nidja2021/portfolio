@@ -39,15 +39,19 @@ export default async function sendMail(req, res) {
         `,
       };
   
-      const result = transport.sendMail(mailOptions, err => {
-        if (err) {
-          return res.status(500).json({ message: err.message })
-        }
-      });
+      // const result = transport.sendMail(mailOptions, err => {
+      //   if (err) {
+      //     return res.status(500).json({ message: err.message })
+      //   }
+      // });
+
+      transport.sendMail(mailOptions)
+      return res.status(200).json({ message: 'Email sent successfully!' })
+
   } catch (err) {
     return res.status(500).json({ message: err.message })
   }
-  return res.status(200).json({ message: 'Email sent successfully!' })
+  
 }
 
 
