@@ -41,7 +41,7 @@ export default async function sendMail(req, res) {
         `,
       };
   
-      const result = await transport.sendMail(mailOptions, err => {
+      const result = transport.sendMail(mailOptions, err => {
         if (err) {
           return res.status(500).json({ message: err.message })
         }
